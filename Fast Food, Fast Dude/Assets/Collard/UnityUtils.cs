@@ -52,5 +52,14 @@ namespace Collard
                 UnityEngine.Object.DestroyImmediate(child.gameObject);
             }
         }
+
+        public static void DestroyChildren(Transform t)
+        {
+            List<Transform> children = t.Cast<Transform>().ToList();
+            foreach (Transform child in children)
+            {
+                UnityEngine.Object.Destroy(child.gameObject);
+            }
+        }
     }
 }
